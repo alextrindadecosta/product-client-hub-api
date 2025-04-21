@@ -5,6 +5,19 @@
 
 .idea/
 
+# Diretórios de build
+**/bin/
+**/obj/
+
+# Arquivos de cache do MSBuild
+*.AssemblyInfoInputs.cache
+*.AssemblyReference.cache
+*.FileListAbsolute.txt
+
+# Arquivos de build do Rider
+*.nuget.info
+*.restore.info
+
 # User-specific files
 *.rsuser
 *.suo
