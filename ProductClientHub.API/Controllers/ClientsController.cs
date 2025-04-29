@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProductClientHub.API.UseCases.Clients.GetAll;
 using ProductClientHub.API.UseCases.Clients.Register;
+using ProductClientHub.API.UseCases.Clients.Update;
 using ProductsClientHub.Communication.Requests;
 using ProductsClientHub.Communication.Responses;
 
@@ -23,9 +24,17 @@ public class ClientsController : ControllerBase
     }
     
     [HttpPut]
-    public IActionResult Update()
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status404NotFound)]
+    public IActionResult Update([FromRoute] Guid id, [FromBody] RequestClientJson request)
     {
-        return Ok();
+        var useCase = new UpdateClientUseCase();
+        
+        useCase.Execute(id, request);
+        
+        return NoContent();
     }
     
     [HttpGet]

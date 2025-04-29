@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using ProductsClientHub.Communication.Requests;
 
-namespace ProductClientHub.API.UseCases.Clients.Register;
+namespace ProductClientHub.API.UseCases.Clients.Validator;
 
 public class RegisterClientValidator : AbstractValidator<RequestClientJson>
 {

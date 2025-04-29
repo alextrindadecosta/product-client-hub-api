@@ -1,5 +1,6 @@
 ﻿using ProductClientHub.API.Entities;
 using ProductClientHub.API.Infrastructure;
+using ProductClientHub.API.UseCases.Clients.Validator;
 using ProductClientHub.Exceptions.ExceptionsBase;
 using ProductsClientHub.Communication.Requests;
 using ProductsClientHub.Communication.Responses;
